@@ -5,10 +5,10 @@
 #define Tiltsensor A0
 
 // Update these with values suitable for your network.
-const char* ssid = "Apsis 102";//put your hotspot ssid here
-const char* password = "renaSesS";// put your hotspot password here
-const char* mqtt_server = "broker.mqtt-dashboard.com";
-//const char* mqtt_server = "iot.eclipse.org";
+const char* ssid = "";//put your hotspot ssid here
+const char* password = "";// put your hotspot password here
+const char* mqtt_server = "";
+
 
 WiFiClient espClient;
 PubSubClient client(espClient);
