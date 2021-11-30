@@ -4,7 +4,6 @@
 //  
 #define Tiltsensor A0
 
-// Update these with values suitable for your network.
 const char* ssid = "";//put your hotspot ssid here
 const char* password = "";// put your hotspot password here
 const char* mqtt_server = "";
@@ -18,7 +17,7 @@ int value = 0;
 int threhold=10;
 void setup_wifi() {
    delay(100);
-  // We start by connecting to a WiFi network
+
     Serial.print("Connecting to ");
     Serial.println(ssid);
     WiFi.begin(ssid, password);
@@ -36,7 +35,7 @@ void setup_wifi() {
 
 void callback(char* topic, byte* payload, unsigned int length) 
 {
-} //end callback
+} 
 
 void reconnect() {
   // Loop until we're reconnected
@@ -46,15 +45,13 @@ void reconnect() {
     // Create a random client ID
     String clientId = "ESP8266Client-";
     clientId += String(random(0xffff), HEX);
-    // Attempt to connect
-    //if you MQTT broker has clientID,username and password
-    //please change following line to    if (client.connect(clientId,userName,passWord))
+
     if (client.connect(clientId.c_str()))
     {
       Serial.println("connected");
-     //once connected to MQTT broker, subscribe command if any
-      //client.subscribe("OsoyooCommand");
-    } else {
+
+    } 
+     else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
       Serial.println(" try again in 5 seconds");
